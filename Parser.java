@@ -16,7 +16,7 @@ public class Parser {
         	for (int i = 0; i < d; i++) {
         		String[] line = reader.readLine().trim().split(" ");
         		for (int j = 0; j < d; j++) {
-        			boolean b = line[j].equals("1");
+        			boolean b = line[j].equals("0");//0 = true 1= false , before the change was: 1 = true 0= false
         			maze.set(i, j, b);
         		}
         	}

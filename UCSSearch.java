@@ -8,6 +8,10 @@ public class UCSSearch extends Algorithm {
 
 	public Solution search() {
 		PriorityQueue<Path> frontier = new PriorityQueue<Path>(comparator);
+		Coordinate startPoint = new coordinate(0,0);
+		Path p = new Path();
+		p.addCoordinate(startPoint);
+		frontier.add(p);
 		
 		
 		return null;

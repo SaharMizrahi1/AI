@@ -30,7 +30,7 @@ public class UCSSearch extends Algorithm {
                 }
 			List<Coordinate> nextStates = maze.getNextStates(currentState);
             for (Coordinate nextState : nextStates) {
-                    if (!visited.contains(nextState)) { //use comparator?
+                    if (!visited.contains(nextState)) { //use comparator here?
                         int costSoFar = currentPath.getCost() + 1; // Increment the cost
                         Path newPath = new Path(currentPath);
                         newPath.addCoordinate(nextState);

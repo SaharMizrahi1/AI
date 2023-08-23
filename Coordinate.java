@@ -14,7 +14,7 @@ public class Coordinate {
     public void setX(int x) {
         this.x = x;
     }
-x
+
     public int getY() {
         return y;
     }

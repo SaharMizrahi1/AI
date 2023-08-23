@@ -29,12 +29,12 @@ public class UCSSearch extends Algorithm {
                     return new Solution(currentPath);
                 }
 			List<Coordinate> nextStates = maze.getNextStates(currentState);
-            for (Coordinate nextState : nextStates) {
+            for (Coordinate nextState : nextStates) { //check aqll nexr steps , if visited or not visited
                     if (!visited.contains(nextState)) { //use comparator here?
                         int costSoFar = currentPath.getCost() + 1; // Increment the cost
                         Path newPath = new Path(currentPath);
                         newPath.addCoordinate(nextState);
-                        frontier.add(newPath, costSoFar); // Add cost to the enqueu
+                        frontier.add(newPath);
                 }
             }
         }

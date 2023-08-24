@@ -37,6 +37,6 @@ public class Path {
     }
     
     public int getCost() {
-        return coordinates.size() - 1; // Number of moves (edges) between nodes
+        return coordinates.size() - 1; // Number of moves (edges) between coordinates
     }
 }

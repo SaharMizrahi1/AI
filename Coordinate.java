@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Coordinate {
     private int x;
     private int y;
@@ -28,6 +30,11 @@ public class Coordinate {
     public String toString() {
         return "(" + x + ", " + y + ")";
     }
+
+    @Override
+	public int hashCode() {
+		return Objects.hash(x, y);
+	}
 
     @Override
     public boolean equals(Object o) {

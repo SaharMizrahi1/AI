@@ -48,7 +48,10 @@ public class Maze {
     }
 
     private boolean isBlocked(int x, int y) {
-        return !maze[x][y]; // Check if the cell is blocked (true) or open (false)
+        if (isValid(x, y)) {
+            return !maze[x][y]; // Check if the cell is blocked (true) or open (false)
+        }
+        return true; // Coordinates are out of bounds, consider it as a blocked cell
     }
 
 

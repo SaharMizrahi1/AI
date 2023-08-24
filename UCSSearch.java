@@ -12,7 +12,7 @@ public class UCSSearch extends Algorithm {
 		// Start state
 		Coordinate startPoint = new Coordinate(0,0);
 		//Goal Point
-		Coordinate endPoint = new Coordinate(maze.getD(),maze.getD()); 
+		Coordinate endPoint = new Coordinate(maze.getD()-1,maze.getD()-1); // matrix limits - 0 to n-1
 
 		Path startPath = new Path();
 		startPath.addCoordinate(startPoint);

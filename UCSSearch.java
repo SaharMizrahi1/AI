@@ -1,3 +1,7 @@
+import java.util.HashSet;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Set;
 
 public class UCSSearch extends Algorithm {
 
@@ -38,11 +42,11 @@ public class UCSSearch extends Algorithm {
                 }
             }
         }
-		return null; // No solution found
+		
     }
-	
+	return null; // No solution found
 }
-
+}
 
    
 	

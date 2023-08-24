@@ -11,7 +11,7 @@ public class Algorithm {
 	}
 	
 	public Solution search() {
-		PriorityQueue<Path> frontier = new PriorityQueue<Path>(comparator);
+		//PriorityQueue<Path> frontier = new PriorityQueue<Path>(comparator);
 		
 		// algorithm...
 		

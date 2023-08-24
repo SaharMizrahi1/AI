@@ -1,11 +1,14 @@
 
 // you need to complete the implementation of the class
+
+import java.util.List;
+
 public class Solution {
 
 	private Path path;
 	private int nodesExplored;
 	
-	public Solution(Path path) { // shaked added
+	public Solution(Path path,int nodesExplored) { // shaked added
         this.path = path;
 		 this.nodesExplored = nodesExplored;
 		 

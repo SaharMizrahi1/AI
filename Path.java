@@ -16,6 +16,15 @@ public class Path {
         }
     }
 
+    // ?
+    public List<Coordinate> getCoordinates() { 
+        List<Coordinate> deepCopy = new ArrayList<>();
+        for (Coordinate coordinate : coordinates) {
+            deepCopy.add(new Coordinate(coordinate.getX(), coordinate.getY()));
+        }
+        return deepCopy;
+    }
+
     public void addCoordinate(Coordinate coordinate) {
         coordinates.add(coordinate);
     }

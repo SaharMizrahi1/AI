@@ -8,6 +8,14 @@ public class Path {
         coordinates = new ArrayList<>();
     }
 
+      // Deep copy constructor
+    public Path(Path sourcePath) {
+        this.coordinates = new ArrayList<>();
+        for (Coordinate coordinate : sourcePath.coordinates) {
+            this.coordinates.add(new Coordinate(coordinate.getX(), coordinate.getY()));
+        }
+    }
+
     public void addCoordinate(Coordinate coordinate) {
         coordinates.add(coordinate);
     }

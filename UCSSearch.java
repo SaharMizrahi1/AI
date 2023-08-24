@@ -26,7 +26,7 @@ public class UCSSearch extends Algorithm {
                 visited.add(currentState);
 
 			if (endPoint.equals(currentState)) {
-                    return new Solution(currentPath);
+                    return new Solution(currentPath, visited.size());
                 }
 			List<Coordinate> nextStates = maze.getNextStates(currentState);
             for (Coordinate nextState : nextStates) { //check all next steps , if visited or not visited

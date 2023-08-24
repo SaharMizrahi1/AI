@@ -3,9 +3,12 @@
 public class Solution {
 
 	private Path path;
-
+	private int nodesExplored;
+	
 	public Solution(Path path) { // shaked added
         this.path = path;
+		 this.nodesExplored = nodesExplored;
+		 
     }
 	
 	public void print() {

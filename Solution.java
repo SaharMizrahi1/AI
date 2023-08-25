@@ -32,7 +32,7 @@ public class Solution {
 	}
 
 
-    //Sahar
+    //Print output into a txt file
     public String generateOutput(String algorithmName) {
         List<Coordinate> coordinates = path.getCoordinates();
         StringBuilder output = new StringBuilder();

@@ -8,7 +8,7 @@ public class Main {
 		Parser parser = new Parser();
 		Maze maze = parser.parse(args[0]);
 		 
-		ReportMaker reportMaker = new ReportMaker();
+		
 		// System.out.print("Astar ");
 		// AStarSearch astar = new AStarSearch(maze);
 		// Solution solution1 = astar.search();
@@ -18,7 +18,6 @@ public class Main {
 		UCSSearch ucs = new UCSSearch(maze);
 		Solution solution2 = ucs.search();
 		solution2.print();
-		reportMaker.createReport(new Coordinate(0, 0), new Coordinate(maze.getD()-1,maze.getD()-1), maze, ucs.getClass().getName(), solution2);
 
 		
 		// System.out.print("Greedy ");

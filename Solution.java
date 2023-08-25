@@ -23,7 +23,7 @@ public class Solution {
         for (Coordinate coordinate : coordinates) {
             System.out.print("(" + (coordinate.getX() + 1) + "," + (coordinate.getY() + 1) + ")");
             if (coordinate != coordinates.get(coordinates.size() - 1)) {
-                System.out.print(",");
+                System.out.print(" ");
             }
         }
         System.out.println();

@@ -15,6 +15,7 @@ public class Main {
 		Solution solution1 = astar.search();
 		if (solution1 == null) {
 			writeNotSolvable(outputFilePath);
+			System.out.println("There is no solution, please try again "); //we can delete there is no solution from each class , only this is good
 		} else {
 			System.out.print("Astar ");
 			solution1.print();

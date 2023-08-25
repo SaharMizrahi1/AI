@@ -19,7 +19,7 @@ public class Solution {
 
 		List<Coordinate> coordinates = path.getCoordinates();
 
-        System.out.print("(search " + nodesExplored + " nodes; path length " + (path.getCost()+1) + "): "); // nodesExplored - not final - need to check
+        System.out.print("(search " + nodesExplored + " nodes; path length " + path.getCoordinates().size() + "): "); // nodesExplored - not final - need to check
         for (Coordinate coordinate : coordinates) {
             System.out.print("(" + (coordinate.getX() + 1) + "," + (coordinate.getY() + 1) + ")");
             if (coordinate != coordinates.get(coordinates.size() - 1)) {

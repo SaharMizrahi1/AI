@@ -20,9 +20,9 @@ public class Main {
 		solution2.print();
 
 		
-		// System.out.print("Greedy ");
-		// GreedySearch greedy = new GreedySearch(maze);
-		// Solution solution3 = greedy.search();
-		// solution3.print();
+		 System.out.print("Greedy ");
+		 GreedySearch greedy = new GreedySearch(maze);
+		 Solution solution3 = greedy.search();
+		 solution3.print();
 	}
 }

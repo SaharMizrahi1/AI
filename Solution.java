@@ -34,6 +34,9 @@ public class Solution {
 
     //Print output into a txt file
     public String generateOutput(String algorithmName) {
+        if (path == null) {
+            return algorithmName + " - Not solvable";
+        }
         List<Coordinate> coordinates = path.getCoordinates();
         StringBuilder output = new StringBuilder();
         output.append(algorithmName);

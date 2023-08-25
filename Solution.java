@@ -1,6 +1,8 @@
 
 // you need to complete the implementation of the class
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 public class Solution {
@@ -29,6 +31,30 @@ public class Solution {
         System.out.println();
 	}
 
+
+    //Sahar
+    public String generateOutput(String algorithmName) {
+        List<Coordinate> coordinates = path.getCoordinates();
+        StringBuilder output = new StringBuilder();
+        output.append(algorithmName);
+        output.append("(search ").append(nodesExplored).append(" nodes; path length ").append(path.getCoordinates().size()).append("): ");
+        for (Coordinate coordinate : coordinates) {
+            output.append("(").append(coordinate.getX() + 1).append(",").append(coordinate.getY() + 1).append(")");
+            if (coordinate != coordinates.get(coordinates.size() - 1)) {
+                output.append(" ");
+            }
+        }
+
+        return output.toString();
+    }
+
+    public void writeToTxt(String filePath,String algorithmName) throws IOException {
+        try (FileWriter writer = new FileWriter(filePath, true)) {
+            writer.write(generateOutput(algorithmName) + "\n"); // Append the output with a newline
+        }
+    }
+
+
     public int GetnodesExplored()
     {
         return nodesExplored;
@@ -39,7 +65,6 @@ public class Solution {
     {
         return path;
     }
-
 
 
 

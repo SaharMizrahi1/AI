@@ -28,4 +28,19 @@ public class Solution {
         }
         System.out.println();
 	}
+
+    public int GetnodesExplored()
+    {
+        return nodesExplored;
+    }
+
+    
+    public Path GetPath()
+    {
+        return path;
+    }
+
+
+
+
 }

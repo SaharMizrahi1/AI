@@ -14,7 +14,7 @@ public class ReportMaker {
     final static String JavaScriptNodeTemplate = "{\"x\": %d, \"y\": %d, \"isObstacle\": %s}";
 
     // Logger instance for logging messages.
-    final static Logger logger = new Logger("ReportMaker");
+    
 
     /**
      * Creates an HTML report based on the provided data.
@@ -26,17 +26,17 @@ public class ReportMaker {
      * @param name The name of the search algorithm used.
      * @param visitedNodes The number of nodes visited during the search.
      */
-    public void createReport(Node start,Node end, Maze maze, List<Node> solution, String name, int visitedNodes) {
+    public void createReport(Coordinate start,Coordinate end, Maze maze, String name, Solution solution) {
         try {
             // Reading the template HTML
             String html = new String(Files.readAllBytes(Paths.get(reportTemplateFile)));
 
             // Replacing the placeholders with the respective data
             html = html.replace("{{maze}}", stringifyMaze(maze));
-            html = html.replace("{{solution}}", stringifySolution(solution));
+            html = html.replace("{{solution}}", stringifySolution(solution.GetPath()));
             html = html.replace("{{start}}", stringifyNode(start));
             html = html.replace("{{end}}", stringifyNode(end));
-            html = html.replace("{{visitedNodes}}", String.valueOf(visitedNodes));
+            html = html.replace("{{visitedNodes}}", String.valueOf(solution.GetnodesExplored()));
             html = html.replace("{{className}}", name);
 
             // Preparing the report directory
@@ -46,9 +46,9 @@ public class ReportMaker {
             String reportFile = reportDirectory + "/report" + "." + name + ".html";
             Files.write(Paths.get(reportFile), html.getBytes());
 
-            logger.info("Report written to " + reportFile);
+            System.out.println("Report written to " + reportFile);
         } catch(IOException e) {
-            logger.error("Error creating report: " + e.getMessage());
+            System.out.println("Error creating report: " + e.getMessage());
             e.printStackTrace();
         }
     }

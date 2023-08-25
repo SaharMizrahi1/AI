@@ -18,6 +18,10 @@ public class AStarSearch extends Algorithm {
 		//Goal Point
 		Coordinate endPoint = new Coordinate(maze.getD() - 1, maze.getD() - 1); // matrix limits - 0 to n-1
 
+		if (!maze.isSolvable()){
+			return null;
+		}
+
 		Path startPath = new Path(maze);
 		startPath.addCoordinate(startPoint);
 		frontier.add(startPath);

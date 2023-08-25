@@ -10,12 +10,14 @@ public class Main {
 		String outputFilePath = "output.txt"; // Change the file name if needed
 
 
-
-		 System.out.print("Astar ");
 		 AStarSearch astar = new AStarSearch(maze);
 		 Solution solution1 = astar.search();
+		 if(solution1==null){
+			 return;
+		 }
+		 System.out.print("Astar ");
 		 solution1.print();
-			solution1.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
+		 solution1.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
 
 
 		System.out.print("UCS ");

@@ -3,24 +3,25 @@ import java.util.List;
 
 public class Maze {
 
-	private boolean[][] maze;
-	private int d;
-	
+    private boolean[][] maze;
+    private int d;
 
-	public Maze(int d) {
-		this.d = d;
-		maze = new boolean[d][d];
-	}
-	
-	public void set(int i, int j, boolean b) {
-		maze[i][j] = b;
-	}
-	public int getD() {
-		return d;
-	}
-	//hellper function
 
-	public List<Coordinate> getNextStates(Coordinate current) {
+    public Maze(int d) {
+        this.d = d;
+        maze = new boolean[d][d];
+    }
+
+    public void set(int i, int j, boolean b) {
+        maze[i][j] = b;
+    }
+
+    public int getD() {
+        return d;
+    }
+    //hellper function
+
+    public List<Coordinate> getNextStates(Coordinate current) {
         int x = current.getX();
         int y = current.getY();
 
@@ -59,7 +60,12 @@ public class Maze {
         return true; // Coordinates are out of bounds, consider it as a blocked cell
     }
 
-
-
+    public boolean isSolvable() {
+        if (!maze[0][0] || !maze[d - 1][d - 1]) {
+            System.out.println("There is no solution.");
+            return false;
+        }
+        return true;
+    }
 
 }

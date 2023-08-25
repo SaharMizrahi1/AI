@@ -48,7 +48,7 @@ public class Solution {
         return output.toString();
     }
 
-    public void writeToTxt(String filePath,String algorithmName) throws IOException {
+    public void writeToTxt(String filePath,String algorithmName) throws IOException { //writing to output file
         try (FileWriter writer = new FileWriter(filePath, true)) {
             writer.write(generateOutput(algorithmName) + "\n"); // Append the output with a newline
         }

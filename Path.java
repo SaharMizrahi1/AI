@@ -3,9 +3,11 @@ import java.util.List;
 
 public class Path {
     private List<Coordinate> coordinates; // Assuming you have a Coordinate class to store (x, y) positions
+
     
     public Path() {
         coordinates = new ArrayList<>();
+       
     }
 
       // Deep copy constructor
@@ -38,5 +40,15 @@ public class Path {
     
     public int getCost() {
         return coordinates.size() - 1; // Number of moves (edges) between coordinates
+    }
+
+    public int getHeuristicEstimate(Coordinate goalCoordinate)
+    {
+        Coordinate currentCoordinate = getLatestCoordinate();
+    
+        int dx = Math.abs(currentCoordinate.getX() - goalCoordinate.getX());
+        int dy = Math.abs(currentCoordinate.getY() - goalCoordinate.getY());
+    
+        return dx + dy; // Manhattan Distance heuristic estimate
     }
 }

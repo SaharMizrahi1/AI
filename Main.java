@@ -11,11 +11,11 @@ public class Main {
 
 
 
-		// System.out.print("Astar ");
-		// AStarSearch astar = new AStarSearch(maze);
-		// Solution solution1 = astar.search();
-		// solution1.print();
-		//solution1.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
+		 System.out.print("Astar ");
+		 AStarSearch astar = new AStarSearch(maze);
+		 Solution solution1 = astar.search();
+		 solution1.print();
+			solution1.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
 
 
 		System.out.print("UCS ");

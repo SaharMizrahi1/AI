@@ -3,10 +3,13 @@ import java.util.List;
 
 public class Path {
     private List<Coordinate> coordinates; // Assuming you have a Coordinate class to store (x, y) positions
+    protected Maze maze;
+
 
     
-    public Path() {
+    public Path(Maze maze) {
         coordinates = new ArrayList<>();
+        this.maze = maze;
        
     }
 
@@ -16,6 +19,7 @@ public class Path {
         for (Coordinate coordinate : sourcePath.coordinates) {
             this.coordinates.add(new Coordinate(coordinate.getX(), coordinate.getY()));
         }
+        this.maze=sourcePath.maze;
     }
 
     // ?
@@ -42,12 +46,12 @@ public class Path {
         return coordinates.size() - 1; // Number of moves (edges) between coordinates
     }
 
-    public int getHeuristicEstimate(Coordinate goalCoordinate)
+    public int getHeuristicEstimate()
     {
         Coordinate currentCoordinate = getLatestCoordinate();
     
-        int dx = Math.abs(currentCoordinate.getX() - goalCoordinate.getX());
-        int dy = Math.abs(currentCoordinate.getY() - goalCoordinate.getY());
+        int dx = Math.abs(currentCoordinate.getX() - (maze.getD()-1));
+        int dy = Math.abs(currentCoordinate.getY() - (maze.getD()-1));
     
         return dx + dy; // Manhattan Distance heuristic estimate
     }

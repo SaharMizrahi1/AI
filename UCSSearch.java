@@ -18,7 +18,7 @@ public class UCSSearch extends Algorithm {
 		//Goal Point
 		Coordinate endPoint = new Coordinate(maze.getD()-1,maze.getD()-1); // matrix limits - 0 to n-1
 
-		Path startPath = new Path();
+		Path startPath = new Path(maze);
 		startPath.addCoordinate(startPoint);
 		frontier.add(startPath);
 

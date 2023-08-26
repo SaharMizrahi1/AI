@@ -62,7 +62,6 @@ public class Maze {
 
     public boolean isSolvable() {
         if (!maze[0][0] || !maze[d - 1][d - 1]) {
-            System.out.println("There is no solution.");
             return false;
         }
         return true;

@@ -15,46 +15,27 @@ public class Main {
 		Solution solution1 = astar.search();
 		if (solution1 == null) {
 			writeNotSolvable(outputFilePath);
-			System.out.println("There is no solution, please try again "); //we can delete there is no solution from each class , only this is good
+			System.out.println("There is no solution For this Maze ");
+			return;
 		} else {
 			System.out.print("Astar ");
 			solution1.print();
 			solution1.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
 		}
 
+
+		System.out.print("UCS ");
 		UCSSearch ucs = new UCSSearch(maze);
 		Solution solution2 = ucs.search();
-		if (solution2 == null) {
-			writeNotSolvable(outputFilePath);
-		} else {
-			System.out.print("UCS ");
-			solution2.print();
-			solution2.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
-		}
-
-//		System.out.print("UCS ");
-//		UCSSearch ucs = new UCSSearch(maze);
-//		Solution solution2 = ucs.search();
-//		solution2.print(); //remove
-//		solution2.writeToTxt(outputFilePath, "UCS "); // Append the solution to the output file
+		solution2.print(); //remove
+		solution2.writeToTxt(outputFilePath, "UCS "); // Append the solution to the output file
 
 
-//		System.out.print("Greedy ");
-//		GreedySearch greedy = new GreedySearch(maze);
-//		Solution solution3 = greedy.search();
-//		solution3.print();//remove later
-//		solution3.writeToTxt(outputFilePath, "Greedy "); // Append the solution to the output file
-
+		System.out.print("Greedy ");
 		GreedySearch greedy = new GreedySearch(maze);
 		Solution solution3 = greedy.search();
-		if (solution3 == null) {
-			writeNotSolvable(outputFilePath);
-		} else {
-			System.out.print("Greedy ");
-			solution3.print();
-			solution3.writeToTxt(outputFilePath, "Astar "); // Append the solution to the output file
-		}
-
+		solution3.print();//remove later
+		solution3.writeToTxt(outputFilePath, "Greedy "); // Append the solution to the output file
 
 
 		}
